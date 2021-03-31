@@ -1,6 +1,6 @@
 import React from 'react'
 
-const search = () => {
+const Search = () => {
     return (
         <div>
           <span className="pageTitle">Search</span>
@@ -8,4 +8,4 @@ const search = () => {
     )
 }
 
-export default search
+export default Search

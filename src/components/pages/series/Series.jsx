@@ -1,6 +1,6 @@
 import React from 'react'
 
-const series = () => {
+const Series = () => {
     return (
         <div>
                         <span className="pageTitle">Series</span>
@@ -8,4 +8,4 @@ const series = () => {
     )
 }
 
-export default series
+export default Series
