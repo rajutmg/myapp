@@ -97,7 +97,7 @@ export default function Cmodal({ children, media_type, id }) {
                   alt=""
                 /> */}
                 <img
-                  className="Content_port"
+                  className="content_port"
                   alt={content.name || content.title}
                   src={
                     content.poster_path
@@ -106,8 +106,8 @@ export default function Cmodal({ children, media_type, id }) {
                   }
                   alt=""
                 />
-                <div className="ContentModal_about">
-                  <span className="ContentModal_title">
+                <div className="contentModal_about">
+                  <span className="contentModal_title">
                     {content.name || content.title} (
                     {(
                       content.first_air_date ||
@@ -118,7 +118,7 @@ export default function Cmodal({ children, media_type, id }) {
                     {content.tagline && (
                       <i className="tagline"> {content.tagline}</i>
                     )}
-                    <span className="ContentModal_description">
+                    <span className="contentModal_description">
                       {content.overview}
                     </span>
                   </span>
