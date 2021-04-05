@@ -12,6 +12,9 @@ import {
 } from "../../config/config";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import "./cmodal.css";
+import Carousel from "./carousel/Carousel";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -86,53 +89,60 @@ export default function Cmodal({ children, media_type, id }) {
           {content && (
             <div className={classes.paper}>
               <div class="contentModal">
-                {/* <img
-                  className="Content_port"
-                  alt={content.name || content.title}
-                  src={
-                    content.poster_path
-                      ? `${img_500}/${content.poster_path}`
-                      : unavailable
-                  }
-                  alt=""
-                /> */}
-                <img
-                  className="content_port"
-                  alt={content.name || content.title}
-                  src={
-                    content.poster_path
-                      ? `${img_500}/${content.backdrop_path}`
-                      : unavailableLandscape
-                  }
-                  alt=""
-                />
-                <div className="contentModal_about">
-                  <span className="contentModal_title">
-                    {content.name || content.title} (
-                    {(
-                      content.first_air_date ||
-                      content.release_date ||
-                      "-----"
-                    ).substring(0, 4)}
-                    )
-                    {content.tagline && (
-                      <i className="tagline"> {content.tagline}</i>
-                    )}
-                    <span className="contentModal_description">
-                      {content.overview}
-                    </span>
-                  </span>
-                  <div></div>
-                  <Button
-                    varient="contained"
-                    startIcon={<YouTubeIcon />}
-                    color="secondary"
-                    target="_blank"
-                    href={`https:/www.youtube.com/watch?v=${video}`}
-                  >
-                    Watch the Trailer
-                  </Button>
-                </div>
+                <Grid container spacing={3}>
+                  <Grid item xs={4}>
+                    <img
+                      className="Content_port"
+                      alt={content.name || content.title}
+                      src={
+                        content.poster_path
+                          ? `${img_500}/${content.poster_path}`
+                          : unavailable
+                      }
+                      alt=""
+                    />
+                    <img
+                      className="content_port"
+                      alt={content.name || content.title}
+                      src={
+                        content.poster_path
+                          ? `${img_500}/${content.backdrop_path}`
+                          : unavailableLandscape
+                      }
+                      alt=""
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <div className="contentModal_about">
+                      <span className="contentModal_title">
+                        {content.name || content.title} (
+                        {(
+                          content.first_air_date ||
+                          content.release_date ||
+                          "-----"
+                        ).substring(0, 4)}
+                        )
+                        {content.tagline && (
+                          <i className="tagline"> {content.tagline}</i>
+                        )}
+                        <span className="contentModal_description">
+                          {content.overview}
+                        </span>
+                      </span>
+                      <div></div>
+                      <Carousel media_type={media_type} id={id} />
+                      <Button
+                        varient="contained"
+                        startIcon={<YouTubeIcon />}
+                        color="secondary"
+                        target="_blank"
+                        href={`https:/www.youtube.com/watch?v=${video}`}
+                      >
+                        Watch the Trailer
+                      </Button>
+                    </div>
+                  </Grid>
+                </Grid>
               </div>
             </div>
           )}
