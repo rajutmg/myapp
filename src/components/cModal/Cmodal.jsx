@@ -70,9 +70,9 @@ export default function Cmodal({ children, media_type, id }) {
 
   return (
     <div>
-      <button type="button" className="media" onClick={handleOpen}>
+      <div type="button" className="media" onClick={handleOpen}>
         {children}
-      </button>
+      </div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -91,7 +91,7 @@ export default function Cmodal({ children, media_type, id }) {
               <div class="contentModal">
                 <Grid container spacing={3}>
                   <Grid item xs={4}>
-                    <img
+                    {/* <img
                       className="Content_port"
                       alt={content.name || content.title}
                       src={
@@ -100,7 +100,7 @@ export default function Cmodal({ children, media_type, id }) {
                           : unavailable
                       }
                       alt=""
-                    />
+                    /> */}
                     <img
                       className="content_port"
                       alt={content.name || content.title}
